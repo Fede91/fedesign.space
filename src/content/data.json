@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "name": "FeDesign",
+    "bio": "🎨 UX / UI Enthusiast",
+    "motto": "Keep it simple!"
+  },
+  "links": [
+    {
+      "title": "Dribbble",
+      "icon": "fab-dribbble",
+      "style": "secondary",
+      "url": "https://dribbble.com/FeDesignSpace"
+    },
+    {
+      "title": "Behance",
+      "icon": "fab-behance",
+      "style": "secondary",
+      "url": "https://www.behance.net/socialb6f1"
+    },
+    {
+      "title": "Instagram",
+      "icon": "fab-instagram",
+      "style": "secondary",
+      "url": "https://www.instagram.com/fedesign_uiux"
+    },
+    {
+      "title": "Figma",
+      "icon": "fab-figma",
+      "style": "secondary",
+      "url": "https://www.figma.com/@fedesign_uiux"
+    }
+  ]
+}
