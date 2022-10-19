@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import styled from "styled-components";
 
 export const Card: React.FC<any> = ({
   url,
@@ -9,28 +9,24 @@ export const Card: React.FC<any> = ({
   title,
   localCover,
 }) => (
-  <div className="card">
+  <StyledContainer>
     <a href={url} target="_blank" rel="noopener noreferrer">
-      <div>
-        {/* not all images will have a local cover (e.g., GIFs) */}
-
+      <StyledImageWrapper>
         <img src={cover} alt={title} />
-      </div>
+      </StyledImageWrapper>
       <div>
-        <div>
-          <p>{date}</p>
-        </div>
-      </div>
-      <div>
-        <div>
-          <span>
-            {tags.map((tag: string) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </span>
-          <h4>{title}</h4>
-        </div>
+        <h4>{title}</h4>
       </div>
     </a>
-  </div>
+  </StyledContainer>
 );
+
+const StyledContainer = styled.div`
+  margin-bottom: 4rem;
+`;
+
+const StyledImageWrapper = styled.div`
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+`;

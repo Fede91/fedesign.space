@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const RootLayout: React.FC<Props> = ({ children }) => {
-  return <StyledContainer>{children}</StyledContainer>;
+  return <Stack direction={{ sm: "column", md: "row" }}>{children}</Stack>;
 };
 
 const StyledContainer = styled(Stack)`

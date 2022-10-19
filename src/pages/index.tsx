@@ -11,6 +11,7 @@ import { Icon } from "../components/Icon";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Card } from "../components/Card";
 import { RootLayout } from "../components/RootLayout";
+import { Stack, VStack } from "@chakra-ui/react";
 
 library.add(fab);
 
@@ -46,30 +47,36 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   return (
     <RootLayout>
       <Logo />
-      <div>
+      <VStack alignItems={"center"}>
         <Avatar />
         <span>{staticData.hero.name}</span>
         <span>{staticData.hero.bio}</span>
-      </div>
+      </VStack>
       <FollowMeImg />
       {staticData.links.map((link) => (
         <Icon icon={link.icon} />
       ))}
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-        <Masonry>
-          {data.allDribbbleShot.nodes.map((shot) => (
-            <Card
-              date={shot.published}
-              title={shot.title}
-              cover={shot.cover}
-              localCover={shot.localCover}
-              url={shot.url}
-              tags={shot.tags}
-              key={shot.id}
-            />
-          ))}
-        </Masonry>
-      </ResponsiveMasonry>
+      <Stack w={{ sm: "100vw", md: "55vw" }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 2 }}>
+          <Masonry>
+            {[
+              ...data.allDribbbleShot.nodes,
+              ...data.allDribbbleShot.nodes,
+              ...data.allDribbbleShot.nodes,
+            ].map((shot) => (
+              <Card
+                date={shot.published}
+                title={shot.title}
+                cover={shot.cover}
+                localCover={shot.localCover}
+                url={shot.url}
+                tags={shot.tags}
+                key={shot.id}
+              />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+      </Stack>
     </RootLayout>
   );
 };
