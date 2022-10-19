@@ -13,13 +13,13 @@ export const Avatar: React.FC = () => {
 };
 
 const StyledImg = styled.img`
-  height: 210px;
-  width: 210px;
+  height: 200px;
+  width: 200px;
 `;
 
 const StyledBox = styled(Box)`
-  height: 210px;
-  width: 210px;
+  height: 200px;
+  width: 200px;
   border-radius: 100%;
   background: rgba(255, 255, 255, 0.55);
   background: radial-gradient(

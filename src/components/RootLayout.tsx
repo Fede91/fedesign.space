@@ -8,11 +8,26 @@ type Props = {
 };
 
 export const RootLayout: React.FC<Props> = ({ children }) => {
-  return <Stack direction={{ sm: "column", md: "row" }}>{children}</Stack>;
+  return (
+    <StyledContainer direction={{ sm: "column", md: "row" }}>
+      {children}
+    </StyledContainer>
+  );
 };
 
 const StyledContainer = styled(Stack)`
-  background-image: url(${PrimaryBkg}));
-  background-position: -300px -600px;
-  background-repeat: no-repeat, no-repeat;
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background-image: url(${PrimaryBkg});
+    background-position: -300px 38vh;
+    background-repeat: no-repeat, no-repeat;
+    z-index: -100;
+  }
 `;

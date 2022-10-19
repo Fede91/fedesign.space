@@ -11,7 +11,7 @@ import { Icon } from "../components/Icon";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Card } from "../components/Card";
 import { RootLayout } from "../components/RootLayout";
-import { Stack, VStack } from "@chakra-ui/react";
+import { HStack, Stack, Text, VStack } from "@chakra-ui/react";
 
 library.add(fab);
 
@@ -47,17 +47,62 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   return (
     <RootLayout>
       <Logo />
-      <VStack alignItems={"center"}>
+      <VStack alignItems={"center"} paddingTop={"100px"} w={"45vw"} h={"100vh"}>
         <Avatar />
         <span>{staticData.hero.name}</span>
         <span>{staticData.hero.bio}</span>
       </VStack>
-      <FollowMeImg />
-      {staticData.links.map((link) => (
-        <Icon icon={link.icon} />
-      ))}
-      <Stack w={{ sm: "100vw", md: "55vw" }}>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 2 }}>
+      <Stack position={"absolute"} left="2rem" bottom={"1rem"}>
+        <FollowMeImg />
+        <HStack>
+          {staticData.links.map((link) => (
+            <Icon icon={link.icon} />
+          ))}
+        </HStack>
+      </Stack>
+      <Stack
+        w={{ sm: "100vw", md: "55vw" }}
+        h={"100vh"}
+        overflowY="scroll"
+        paddingTop={"90px"}
+      >
+        <Stack
+          position={"fixed"}
+          top="0"
+          left="calc(55vw-200px)"
+          h={"100vh"}
+          w={"80px"}
+          overflow={"visible"}
+          alignContent="center"
+          justifyContent={"center"}
+          alignItems="center"
+          // zIndex={-1}
+        >
+          <span
+            style={{
+              position: "absolute",
+              borderLeft: "1px solid black",
+              height: "100vh",
+              left: 40,
+              top: "0",
+              width: "1px",
+            }}
+          />
+          <div
+            style={{
+              // transform: "rotate(270deg)",
+              // transformOrigin: "0 -70px",
+              width: "200px",
+            }}
+            //marginTop={"-1rem"}
+          >
+            <Stack transform={"rotate(270deg)"}>
+              <Text>PORTFOLIO</Text>
+              <Text>EXPLORE MY WORKS</Text>
+            </Stack>
+          </div>
+        </Stack>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 1, 900: 2 }}>
           <Masonry>
             {[
               ...data.allDribbbleShot.nodes,

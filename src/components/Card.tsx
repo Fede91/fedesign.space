@@ -23,6 +23,8 @@ export const Card: React.FC<any> = ({
 
 const StyledContainer = styled.div`
   margin-bottom: 4rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 `;
 
 const StyledImageWrapper = styled.div`

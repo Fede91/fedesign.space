@@ -7,6 +7,6 @@ export const FollowMeImg: React.FC = () => (
 );
 
 const StyledImg = styled.img`
-  height: 2.5rem;
+  height: 100px;
   width: auto;
 `;
