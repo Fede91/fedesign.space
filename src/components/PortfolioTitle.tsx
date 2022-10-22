@@ -1,0 +1,75 @@
+import { Stack, Text, useBreakpointValue } from "@chakra-ui/react";
+import React from "react";
+import styled from "styled-components";
+
+export const PortfolioTitle = () => {
+  const leftContainer = useBreakpointValue(
+    {
+      sm: "0px",
+      md: "38vw",
+    },
+    {
+      fallback: "md",
+    }
+  );
+
+  const topLine = useBreakpointValue(
+    {
+      sm: "58px",
+      md: "0",
+    },
+    {
+      fallback: "md",
+    }
+  );
+
+  return (
+    <Stack
+      position={"fixed"}
+      top="0"
+      left={leftContainer}
+      h={"100vh"}
+      w={"100px"}
+      overflow={"visible"}
+      alignContent="center"
+      justifyContent={"center"}
+      alignItems="center"
+      zIndex={-1}
+    >
+      <Stack
+        position={"absolute"}
+        borderLeft={"1px solid #2c2c2c"}
+        height="100vh"
+        left={"2.5rem"}
+        top={topLine}
+        width={"1px"}
+        opacity={0.5}
+      />
+      <StyledWrapper>
+        <Stack transform={"rotate(270deg)"}>
+          <Text
+            fontSize={"1rem"}
+            fontWeight={"bold"}
+            color={"#2c2c2c"}
+            opacity={0.5}
+          >
+            PORTFOLIO
+          </Text>
+          <Text
+            fontSize={"2.25rem"}
+            fontWeight={"bold"}
+            marginTop={"0rem !important"}
+            color={"#2c2c2c"}
+            opacity={0.5}
+          >
+            EXPLORE MY WORKS
+          </Text>
+        </Stack>
+      </StyledWrapper>
+    </Stack>
+  );
+};
+
+const StyledWrapper = styled.div`
+  width: 25rem;
+`;

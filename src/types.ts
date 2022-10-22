@@ -4,24 +4,13 @@ type Hero = {
   motto?: string;
 };
 
-type Item = {
+export type Link = {
   title: string;
-  imgIcon?: string;
-  img?: string;
-  style: "primary" | "secondary";
+  icon: string;
   url: string;
-  icon?: string;
-  cta?: string;
-  description?: string;
-};
-
-export type Section = {
-  title: string;
-  layout: "row" | "card";
-  items: Item[];
 };
 
 export type Data = {
   hero: Hero;
-  sections: Section[];
+  links: Link[];
 };

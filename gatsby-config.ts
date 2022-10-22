@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -15,7 +19,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-dribbble",
       options: {
-        access_token: `b5558302ad8b980068d92b47cddd10195f4981f89df4f8e5953fbf79cf16f512`,
+        access_token: `${process.env.DRIBBBLE_ACCESS_TOKEN}`,
       },
     },
     {

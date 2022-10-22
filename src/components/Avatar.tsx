@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import AvatarImg from "../assets/img/FD_Avatar.png";
-import BckImg from "../assets/img/radial.png";
 import styled from "styled-components";
 
 export const Avatar: React.FC = () => {
@@ -13,20 +12,11 @@ export const Avatar: React.FC = () => {
 };
 
 const StyledImg = styled.img`
-  height: 200px;
-  width: 200px;
+  height: 192px;
+  width: 157px;
 `;
 
 const StyledBox = styled(Box)`
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  background: rgba(255, 255, 255, 0.55);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.55) 40%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  backdrop-filter: blur(2px);
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  height: 192px;
+  width: 157px;
 `;
