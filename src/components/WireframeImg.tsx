@@ -6,11 +6,12 @@ import Img from "../assets/img/wireframe_logo.png";
 export const WireframeImg: React.FC = () => {
   const right = useBreakpointValue(
     {
+      base: "0px",
       sm: "0px",
       md: "15vw",
     },
     {
-      fallback: "md",
+      fallback: "base",
     }
   );
 

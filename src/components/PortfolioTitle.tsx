@@ -5,21 +5,23 @@ import styled from "styled-components";
 export const PortfolioTitle = () => {
   const leftContainer = useBreakpointValue(
     {
+      base: "0px",
       sm: "0px",
       md: "38vw",
     },
     {
-      fallback: "md",
+      fallback: "base",
     }
   );
 
   const topLine = useBreakpointValue(
     {
+      base: "58px",
       sm: "58px",
       md: "0",
     },
     {
-      fallback: "md",
+      fallback: "base",
     }
   );
 

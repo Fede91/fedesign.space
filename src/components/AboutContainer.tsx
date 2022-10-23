@@ -4,31 +4,34 @@ import React from "react";
 export const AboutContainer: React.FC<any> = ({ children }) => {
   const w = useBreakpointValue(
     {
+      base: "100%",
       sm: "100%",
       md: "45vw",
     },
     {
-      fallback: "md",
+      fallback: "base",
     }
   );
 
   const paddingLeft = useBreakpointValue(
     {
+      base: "80px",
       sm: "80px",
       md: "0",
     },
     {
-      fallback: "md",
+      fallback: "base",
     }
   );
 
   const h = useBreakpointValue(
     {
+      base: "calc(100vh - 100px)",
       sm: "calc(100vh - 100px)",
       md: "100vh",
     },
     {
-      fallback: "md",
+      fallback: "base",
     }
   );
 
